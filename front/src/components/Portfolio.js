@@ -5,6 +5,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import { UserStateContext } from "../App";
 import * as Api from "../api";
 import User from "./user/User";
+import Certi from "./certificate/Certi";
 
 function Portfolio() {
   const navigate = useNavigate();
@@ -50,20 +51,24 @@ function Portfolio() {
   if (!isFetchCompleted) {
     return "loading...";
   }
+  console.log("1",portfolioOwner.id);//userId
+  console.log("2",userState.user);//user Object
 
   return (
     <Container fluid>
       <Row>
         <Col md="3" lg="3">
           <User
-            portfolioOwnerId={portfolioOwner.id}
+            portfolioOwnerId={ portfolioOwner.id}
             isEditable={portfolioOwner.id === userState.user?.id}
-          />
+            />
         </Col>
-        <Col>
-          <div style={{ textAlign: "center" }}>
-            학력 목록, 수상이력 목록, 프로젝트 목록, 자격증 목록 만들기
-          </div>
+        <Col md="9" lg="9">
+          <Certi
+          portfolioOwnerId={portfolioOwner.id}
+          isEditable={portfolioOwner.id == userState.user?.id}
+          // isDeletable={portfolioOwner.id == userState.user?.id}
+          />
         </Col>
       </Row>
     </Container>

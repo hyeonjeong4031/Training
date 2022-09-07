@@ -21,10 +21,10 @@ function UserCard({ user, setIsEditing, isEditable, isNetwork }) {
         {isEditable && (
           <Col>
             <Row className="mt-3 text-center text-info">
-              <Col sm={{ span: 20 }}>
+              <Col sm={{ span: 20 }}> 
                 <Button
-                  variant="outline-info"
-                  size="sm"
+                  variant="outline-info"//버튼 색(파랑->하양-파란태두리)
+                  size="sm"//편집버튼보다 버튼 크기가 작음
                   onClick={() => setIsEditing(true)}
                 >
                   편집

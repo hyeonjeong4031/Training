@@ -23,6 +23,8 @@ function User({ portfolioOwnerId, isEditable }) {
           setUser={setUser}
         />
       ) : (
+        console.log("🔴user:,", user),//user가 있으면 나옴..
+
         <UserCard
           user={user}
           setIsEditing={setIsEditing}
